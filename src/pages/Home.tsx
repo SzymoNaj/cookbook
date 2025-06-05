@@ -7,9 +7,11 @@ export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
-    // symulacja fetchowania
-    setRecipes(data as Recipe[]);
-  }, []);
+  const localData = localStorage.getItem('recipes');
+  const fromStorage = localData ? JSON.parse(localData) : [];
+  setRecipes([...data, ...fromStorage]);
+}, []);
+
 
   return (
     <div style={{
