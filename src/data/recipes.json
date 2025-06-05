@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "title": "Spaghetti Carbonara",
+    "category": "Obiad",
+    "image": "carbonara.jpg",
+    "ingredients": [
+      "200g makaronu",
+      "100g boczku",
+      "2 jajka",
+      "50g parmezanu"
+    ],
+    "instructions": "Ugotuj makaron. Podsmaż boczek. Wymieszaj z jajkami i parmezanem."
+  },
+  {
+    "id": "2",
+    "title": "Tosty francuskie",
+    "category": "Śniadanie",
+    "image": "tostyFrancuskie.png",
+    "ingredients": [
+      "2 kromki chleba",
+      "1 jajko",
+      "50ml mleka",
+      "cukier puder"
+    ],
+    "instructions": "Wymieszaj jajko z mlekiem. Zanurz chleb. Smaż na patelni i posyp cukrem."
+  }
+]
