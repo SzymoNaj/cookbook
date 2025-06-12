@@ -14,15 +14,13 @@ export default function Home() {
 
 
   return (
-    <div style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '1rem',
-      padding: '1rem'
-    }}>
+  <main>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
       {recipes.map(recipe => (
         <RecipeCard key={recipe.id} recipe={recipe} />
       ))}
     </div>
-  );
+  </main>
+);
+
 }

@@ -44,43 +44,45 @@ export default function AddRecipe() {
 
 
   return (
-    <div style={{ maxWidth: '600px', margin: '2rem auto', padding: '1rem' }}>
-      <h2>Dodaj nowy przepis</h2>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <input
-          type="text"
-          placeholder="Tytuł"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-        />
-        <select value={category} onChange={e => setCategory(e.target.value)}>
-          <option value="">Wybierz kategorię</option>
-          <option value="Śniadanie">Śniadanie</option>
-          <option value="Obiad">Obiad</option>
-          <option value="Kolacja">Kolacja</option>
-          <option value="Deser">Deser</option>
-        </select>
-        <textarea
-          placeholder="Składniki (oddzielone przecinkiem)"
-          value={ingredients}
-          onChange={e => setIngredients(e.target.value)}
-        />
-        <textarea
-          placeholder="Instrukcja przygotowania"
-          value={instructions}
-          onChange={e => setInstructions(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Nazwa pliku obrazka (np. carbonara.jpg)"
-          value={image}
-          onChange={e => setImage(e.target.value)}
-        />
-        <button type="submit" style={{ padding: '0.5rem', cursor: 'pointer' }}>
-          Dodaj przepis
-        </button>
-      </form>
-    </div>
+    <main>
+      <div style={{ maxWidth: '600px', margin: '2rem auto', padding: '1rem' }}>
+        <h2>Dodaj nowy przepis</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <input
+            type="text"
+            placeholder="Tytuł"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+          />
+          <select value={category} onChange={e => setCategory(e.target.value)}>
+            <option value="">Wybierz kategorię</option>
+            <option value="Śniadanie">Śniadanie</option>
+            <option value="Obiad">Obiad</option>
+            <option value="Kolacja">Kolacja</option>
+            <option value="Deser">Deser</option>
+          </select>
+          <textarea
+            placeholder="Składniki (oddzielone przecinkiem)"
+            value={ingredients}
+            onChange={e => setIngredients(e.target.value)}
+          />
+          <textarea
+            placeholder="Instrukcja przygotowania"
+            value={instructions}
+            onChange={e => setInstructions(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Nazwa pliku obrazka (np. carbonara.jpg)"
+            value={image}
+            onChange={e => setImage(e.target.value)}
+          />
+          <button type="submit" style={{ padding: '0.5rem', cursor: 'pointer' }}>
+            Dodaj przepis
+          </button>
+        </form>
+      </div>
+    </main>
   );
 }
 
