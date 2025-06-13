@@ -6,6 +6,20 @@ import type { Recipe } from '../types/Recipe';
 export default function RecipeDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const handleDelete = () => {
+    const confirmDelete = window.confirm('Czy na pewno chcesz usunąć ten przepis?');
+    if (!confirmDelete) return;
+
+    const localData = localStorage.getItem('recipes');
+    const recipesFromStorage: Recipe[] = localData ? JSON.parse(localData) : [];
+
+    const updated = recipesFromStorage.filter(r => r.id !== id);
+    localStorage.setItem('recipes', JSON.stringify(updated));
+
+    alert('Przepis usunięty.');
+    navigate('/');
+  };
+
   const [recipe, setRecipe] = useState<Recipe | undefined>(undefined);
 
   useEffect(() => {
@@ -23,12 +37,12 @@ export default function RecipeDetails() {
 
   return (
     <main>
-      <div style={{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
+      <div className="recipe-details-container">
         <h1>{recipe.title}</h1>
         <img
           src={new URL(`../assets/images/${recipe.image}`, import.meta.url).href}
           alt={recipe.title}
-          style={{ width: '100%', borderRadius: '8px', margin: '1rem 0' }}
+          className="recipe-image"
         />
         <h3>Składniki:</h3>
         <ul>
@@ -38,20 +52,19 @@ export default function RecipeDetails() {
         </ul>
         <h3>Instrukcja:</h3>
         <p>{recipe.instructions}</p>
-        <button
-          onClick={() => navigate(-1)}
-          style={{
-            marginTop: '2rem',
-            padding: '0.5rem 1rem',
-            backgroundColor: '#ccc',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
-        >
-          Powrót
-        </button>
+
+        <div className="button-group">
+          <button className="btn" onClick={() => navigate(-1)}>
+            Powrót
+          </button>
+          <button className="btn" onClick={() => navigate(`/edit/${recipe.id}`)}>
+            Edytuj
+          </button>
+          <button className="btn delete" onClick={handleDelete}>
+            Usuń przepis
+          </button>
+        </div>
       </div>
-    </main>  
+    </main>
   );
 }

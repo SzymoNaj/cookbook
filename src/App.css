@@ -48,7 +48,9 @@ form {
   margin: 2rem auto;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 0.5rem;
   border-radius: 4px;
   border: none;
@@ -56,16 +58,53 @@ input, select, textarea {
 }
 
 button {
-  padding: 0.7rem;
-  background-color: #555;
+  font-family: inherit;
+}
+
+/* UNIWERSALNY PRZYCISK */
+.btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #888;
   color: white;
   border: none;
   border-radius: 6px;
   font-weight: bold;
+  font-size: 1rem;
+  min-width: 130px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  text-align: center;
 }
 
-button:hover {
+.btn:hover {
   background-color: #777;
+}
+
+/* PRZYCISK USUWANIA */
+.btn.delete {
+  background-color: #cc4444;
+}
+
+.btn.delete:hover {
+  background-color: #aa2222;
+}
+
+/* KONTENER NA PRZYCISKI */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.recipe-details-container {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.recipe-image {
+  width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
 }
