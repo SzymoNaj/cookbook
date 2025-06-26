@@ -20,3 +20,7 @@ Instalacja i uruchamianie:
 
 4. Uruchomienie testów (dla zainteresowanych):
   npm run test
+
+
+Live Preview:
+cookbook na Netlify -> https://storied-baklava-4be57c.netlify.app/
