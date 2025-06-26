@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import type { Recipe } from '../types/Recipe';
+import data from '../data/recipes.json';
 
 export default function EditRecipe() {
   const { id } = useParams();
@@ -10,8 +11,11 @@ export default function EditRecipe() {
 
   useEffect(() => {
     const localData = localStorage.getItem('recipes');
-    const allRecipes = localData ? JSON.parse(localData) : [];
-    const found = allRecipes.find((r: Recipe) => r.id === id);
+    const fromStorage: Recipe[] = localData ? JSON.parse(localData) : [];
+
+    const allRecipes = [...data, ...fromStorage];
+
+    const found = allRecipes.find((r) => r.id === id);
     if (found) setRecipe(found);
   }, [id]);
 
@@ -28,8 +32,9 @@ export default function EditRecipe() {
     const localData = localStorage.getItem('recipes');
     let allRecipes = localData ? JSON.parse(localData) : [];
 
-    allRecipes = allRecipes.map((r: Recipe) => (r.id === recipe.id ? recipe : r));
-    localStorage.setItem('recipes', JSON.stringify(allRecipes));
+    // Nadpisuje przepis w localStorage
+    const updated = allRecipes.map((r: Recipe) => (r.id === recipe.id ? recipe : r));
+    localStorage.setItem('recipes', JSON.stringify(updated));
     alert('Przepis zaktualizowany!');
     navigate('/');
   }
@@ -39,18 +44,45 @@ export default function EditRecipe() {
   return (
     <form onSubmit={handleSave} style={{ padding: '2rem', maxWidth: '600px', margin: '0 auto' }}>
       <h2>Edytuj przepis</h2>
-      <input type="text" name="title" value={recipe.title} onChange={handleChange} placeholder="Tytuł" required />
+
+      <input
+        type="text"
+        name="title"
+        value={recipe.title}
+        onChange={handleChange}
+        placeholder="Tytuł"
+        required
+      />
+
       <select name="category" value={recipe.category} onChange={handleChange}>
         <option>Śniadanie</option>
         <option>Obiad</option>
         <option>Kolacja</option>
       </select>
-      <input type="text" name="image" value={recipe.image} onChange={handleChange} placeholder="Nazwa pliku obrazka" />
-      <textarea name="ingredients" value={recipe.ingredients.join(',')} onChange={(e) =>
-        setRecipe({ ...recipe, ingredients: e.target.value.split(',') })
-      } />
-      <textarea name="instructions" value={recipe.instructions} onChange={handleChange} />
-      <button type="submit">Zapisz zmiany</button>
+
+      <input
+        type="text"
+        name="image"
+        value={recipe.image}
+        onChange={handleChange}
+        placeholder="Nazwa pliku obrazka"
+      />
+
+      <textarea
+        name="ingredients"
+        value={recipe.ingredients.join(',')}
+        onChange={(e) =>
+          setRecipe({ ...recipe, ingredients: e.target.value.split(',') })
+        }
+      />
+
+      <textarea
+        name="instructions"
+        value={recipe.instructions}
+        onChange={handleChange}
+      />
+
+      <button type="submit" className="btn">Zapisz zmiany</button>
     </form>
   );
 }

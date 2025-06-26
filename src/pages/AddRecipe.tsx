@@ -24,11 +24,11 @@ export default function AddRecipe() {
     image
   };
 
-  //Pobiera obecne przepisy z localStorage
+  //Pobieranie obecnych przepisów z localStorage
   const zapisane = localStorage.getItem('recipes');
   const parsed = zapisane ? JSON.parse(zapisane) : [];
 
-  //Dodaje nowy przepis i zapisuje go
+  //Dodawanie nowego przepisu zapis
   parsed.push(nowyPrzepis);
   localStorage.setItem('recipes', JSON.stringify(parsed));
 
@@ -77,7 +77,7 @@ export default function AddRecipe() {
             value={image}
             onChange={e => setImage(e.target.value)}
           />
-          <button type="submit" style={{ padding: '0.5rem', cursor: 'pointer' }}>
+          <button type="submit" className="btn">
             Dodaj przepis
           </button>
         </form>

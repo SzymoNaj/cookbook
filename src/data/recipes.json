@@ -10,7 +10,7 @@
       "2 jajka",
       "50g parmezanu"
     ],
-    "instructions": "Ugotuj makaron. Podsmaż boczek. Wymieszaj z jajkami i parmezanem."
+    "instructions": "Ugotuj makaron. Podsmaż boczek. Wymieszaj z jajkami i na koniec dodaj parmezan."
   },
   {
     "id": "2",
@@ -24,5 +24,76 @@
       "cukier puder"
     ],
     "instructions": "Wymieszaj jajko z mlekiem. Zanurz chleb. Smaż na patelni i posyp cukrem."
+  },
+  {
+    "id": "3",
+    "title": "Krem z dyni",
+    "category": "Obiad",
+    "image": "zupaKrem.jpg",
+    "ingredients": [
+      "500g dyni",
+      "1 cebula",
+      "2 ząbki czosnku",
+      "500ml bulionu warzywnego",
+      "śmietanka 30%"
+    ],
+    "instructions": "Pokrój dynię i cebulę, podsmaż na patelni z czosnkiem. Dodaj bulion i gotuj aż wszystko rozmięknie. Zblenduj, dodaj śmietankę i dopraw."
+  },
+  {
+    "id": "4",
+    "title": "Placki bananowe",
+    "category": "Śniadanie",
+    "image": "plackiBananowe.jpg",
+    "ingredients": [
+      "2 banany",
+      "2 jajka",
+      "pół szklanki mąki",
+      "łyżeczka proszku do pieczenia",
+      "olej"
+    ],
+    "instructions": "Rozgnieć banany, wymieszaj z jajkami, mąką i proszkiem. Smaż aż do uzyskania złotego koloru z obu stron."
+  },
+  {
+    "id": "5",
+    "title": "Sałatka grecka",
+    "category": "Kolacja",
+    "image": "salatkaGrecka.jpg",
+    "ingredients": [
+      "pomidory",
+      "ogórek",
+      "czerwona cebula",
+      "oliwki",
+      "ser feta",
+      "oliwa z oliwek"
+    ],
+    "instructions": "Pokrój warzywa i fetę. Wymieszaj w wszystko w misce i polej oliwą."
+  },
+  {
+    "id": "6",
+    "title": "Kurczak curry z ryżem",
+    "category": "Obiad",
+    "image": "kurczakCurry.jpg",
+    "ingredients": [
+      "300g kurczaka",
+      "1 cebula",
+      "czosnek",
+      "pasta curry",
+      "200ml mleczka kokosowego",
+      "ryż"
+    ],
+    "instructions": "Podsmaż kurczaka z cebulą i czosnkiem. Dodaj curry i mleczko kokosowe. Duś na patelni."
+  },
+  {
+    "id": "7",
+    "title": "Kanapka z awokado i jajkiem",
+    "category": "Śniadanie",
+    "image": "kanapkaAwokado.jpg",
+    "ingredients": [
+      "2 kromki chleba",
+      "1 dojrzałe awokado",
+      "1 jajko",
+      "sól, pieprz"
+    ],
+    "instructions": "Rozgnieć awokado i rozsmaruj na chlebie. Usmaż jajko i połóż na wierzchu. Dopraw solą i pieprzem według uznania."
   }
 ]

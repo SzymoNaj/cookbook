@@ -31,6 +31,7 @@ export default function RecipeDetails() {
     setRecipe(foundRecipe);
   }, [id]);
 
+  
   if (!recipe) {
     return <p style={{ padding: '1rem' }}>Nie znaleziono przepisu.</p>;
   }

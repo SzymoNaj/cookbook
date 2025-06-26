@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AddRecipe from './pages/AddRecipe';
 import EditRecipe from './pages/EditRecipe';
-import Contact from './pages/Contact';
 import RecipeDetails from './pages/RecipeDetails';
 import Navbar from './components/Navbar';
+
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<AddRecipe />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
         <Route path="/edit/:id" element={<EditRecipe />} />
       </Routes>
